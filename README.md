@@ -4,7 +4,7 @@
 
 #### Team Name: `Cooked Coders`    
   
-#### Your teamâ€™s hackathon idea in One sentence:
+#### Your team's hackathon idea in One sentence:
 ##### `AI enabled mental health screening to faciliate easier patient access to medical professionals and streamlined condition reporting for their doctor.`
 
 
