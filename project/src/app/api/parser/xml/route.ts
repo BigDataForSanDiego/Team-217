@@ -17,5 +17,5 @@ export async function POST(request: Request) {
 
   console.log(question);
 
-  return NextResponse.json({ success: true, questions });
+  return NextResponse.json({ success: true, question });
 }

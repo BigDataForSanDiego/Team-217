@@ -56,7 +56,7 @@ Investigate historical context
 <question>How have these symptoms affected your relationships and ability to fulfill your responsibilities at work/school/home? Are you finding it harder to maintain these commitments compared to a few months ago?</question>
 <question>Have you experienced similar periods of low mood or loss of interest in the past? If so, can you tell me about what was happening in your life during those times and what helped you recover?</question>
 </answer>`;
-    await parse(sampleText); // Call parse with the text "test"
+    await parse(sampleText);
   };
 
   return (
