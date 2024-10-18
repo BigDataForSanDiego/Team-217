@@ -1,4 +1,5 @@
 import Card from "@/features/home/components/card";
+import Footer from "@/features/home/components/footer-nav";
 import { CARDS } from "@/features/home/utils/utils";
 
 const profileIcon: JSX.Element = (
@@ -26,32 +27,37 @@ const profileIcon: JSX.Element = (
 
 export default function Home() {
 	return (
-		<>
-			<div className="flex justify-between items-center gap-1 px-4 pt-28 pb-4">
-				<div className="flex items-center gap-1">
-					<h1 className="text-2xl font-bold text-secondary">John</h1>
-					<span className="font-bold text-primary">
-						+ Add patient
-					</span>
+		<div className="flex flex-col h-screen justify-between">
+			<div className="flex-grow">
+				<div className="flex justify-between items-center gap-1 px-4 pt-28 pb-4">
+					<div className="flex items-center gap-1">
+						<h1 className="text-2xl font-bold text-secondary">
+							John
+						</h1>
+						<span className="font-bold text-primary">
+							+ Add patient
+						</span>
+					</div>
+					{profileIcon}
 				</div>
-				{profileIcon}
-			</div>
-			<div className="flex flex-col gap-4 py-8 px-4 bg-white rounded-2xl">
-				<h2 className="font-bold text-secondary">Get care</h2>
-				<div className="flex flex-col gap-3">
-					{CARDS.map((card) => {
-						return (
-							<Card
-								key={card.title}
-								title={card.title}
-								subtitle={card.subtitle}
-								imagePath={card.imagePath}
-								isNew={card.isNew}
-							/>
-						);
-					})}
+				<div className="flex flex-col gap-4 py-8 px-4 bg-white rounded-2xl">
+					<h2 className="font-bold text-secondary">Get care</h2>
+					<div className="flex flex-col gap-3">
+						{CARDS.map((card) => {
+							return (
+								<Card
+									key={card.title}
+									title={card.title}
+									subtitle={card.subtitle}
+									imagePath={card.imagePath}
+									isNew={card.isNew}
+								/>
+							);
+						})}
+					</div>
 				</div>
 			</div>
-		</>
+			<Footer />
+		</div>
 	);
 }
