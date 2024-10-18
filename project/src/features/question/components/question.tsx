@@ -1,21 +1,20 @@
 "use client";
 
-import { useState } from "react";
-import { ChevronRight } from "lucide-react";
-import { QuestionInfo } from "../types/types";
+import { SelectQuestion } from "@/app/(mobile)/mental-health/page";
 
-export default function Question({ question }: QuestionInfo) {
-	const [selected, setSelected] = useState<number | null>(null);
+const options: string[] = [
+	"Not at all",
+	"Several days",
+	"More than half the days",
+	"Nearly every day",
+];
 
-	const options = [0, 1, 2, 3];
+type QuestionProps = SelectQuestion & {
+	onClick: (answer: number) => void;
+};
 
-	const scale = [
-		"Not at all",
-		"Several days",
-		"More than half the days",
-		"Nearly every day",
-	];
-
+export default function Question({ question, answer, onClick }: QuestionProps) {
+	console.log(answer);
 	return (
 		<div>
 			<div className="text-secondary font-bold pb-2">{question}</div>
@@ -25,7 +24,7 @@ export default function Question({ question }: QuestionInfo) {
 						<button
 							key={option}
 							className={`flex gap-2 h-16 w-full px-4 justify-between items-center ${
-								selected === option
+								answer === index
 									? "bg-primary"
 									: "bg-secondaryLight"
 							} ${
@@ -35,16 +34,16 @@ export default function Question({ question }: QuestionInfo) {
 									? "rounded-r-2xl"
 									: "rounded-none"
 							}`}
-							onClick={() => setSelected(option)}
+							onClick={() => onClick(index)}
 						></button>
 						<span
 							className={`text-center text-sm font-medium mt-2 ${
-								selected === option
+								answer === index
 									? "text-primary"
 									: "text-secondary"
 							}`}
 						>
-							{scale[index]}
+							{option}
 						</span>
 					</div>
 				))}
