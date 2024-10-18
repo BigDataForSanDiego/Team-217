@@ -50,6 +50,7 @@ export default function Home() {
 									title={card.title}
 									subtitle={card.subtitle}
 									imagePath={card.imagePath}
+									href={card.href}
 									isNew={card.isNew}
 								/>
 							);

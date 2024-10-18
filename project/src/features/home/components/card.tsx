@@ -5,10 +5,14 @@ export default function Card({
 	title,
 	subtitle,
 	imagePath,
+	href,
 	isNew = false,
 }: CardInfo) {
 	return (
-		<button className="bg-primaryLight flex gap-2 h-24 w-full px-4 justify-between items-center rounded-2xl">
+		<a
+			href={href}
+			className="bg-primaryLight flex gap-2 h-24 w-full px-4 justify-between items-center rounded-2xl"
+		>
 			<div className="flex flex-col gap-1">
 				<div className="flex items-center gap-1">
 					<h3 className="text-primary font-bold">{title}</h3>
@@ -28,6 +32,6 @@ export default function Card({
 				src={imagePath}
 				alt="icon"
 			/>
-		</button>
+		</a>
 	);
 }
